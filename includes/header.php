@@ -10,7 +10,7 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">My Account</a></li>
-                <li><a class="dropdown-item" href="#">Log out</a></li>
+                <li><a class="dropdown-item" href="login.php">Log out</a></li>
             </ul>
         </div>
     </div>
