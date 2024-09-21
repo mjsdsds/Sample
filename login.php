@@ -2,13 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./img/logo.png">
-
-    <title>Document</title>
+    <title>Login & Sign Up</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 400px;
+            margin-top: 100px;
+        }
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+    </style>
 </head>
 <body>
-    
+
+<div class="container mt-5">
+    <div id="loginForm" class="form-section active">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <label for="loginEmail">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <p class="mt-3">Don't have an account? <a href="#" id="showSignUp">Sign up here</a></p>
+        </form>
+    </div>
+
+    <div id="signUpForm" class="form-section">
+        <h2>Sign Up</h2>
+        <form>
+            <div class="form-group">
+                <label for="signupName">Name</label>
+                <input type="text" class="form-control" id="signupName" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+                <label for="signupEmail">Email address</label>
+                <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-success">Sign Up</button>
+            <p class="mt-3">Already have an account? <a href="#" id="showLogin">Login here</a></p>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#showSignUp').click(function(e) {
+            e.preventDefault();
+            $('#loginForm').removeClass('active');
+            $('#signUpForm').addClass('active');
+        });
+
+        $('#showLogin').click(function(e) {
+            e.preventDefault();
+            $('#signUpForm').removeClass('active');
+            $('#loginForm').addClass('active');
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
